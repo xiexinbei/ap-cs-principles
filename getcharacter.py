@@ -1,7 +1,7 @@
 class GetCharacter:
-    def __init__(self, helloKitty: int, melody: int, hangyodon: int, kuromi: int):
+    def __init__(self, hello_kitty: int, melody: int, hangyodon: int, kuromi: int):
         self.apple_home ={
-            'hellokitty': helloKitty,
+            'hello_kitty': hello_kitty,
             'melody': melody,
             'hangyodon': hangyodon,
             'kuromi': kuromi
@@ -21,14 +21,16 @@ class GetCharacter:
     def sort(self) -> str:
         score = 0
         result = ''
-        for house, points in self.apple_home.items():
+
+        for character, points in self.apple_home.items():
             if points > score:
-                result=house
+                score = points
+                result=character
 
         return result
 
     def clear(self) -> None:
-        self.house = {
+        self.apple_home = {
             'hellokitty': 0,
             'melody': 0,
             'hangyodon': 0,

@@ -51,5 +51,25 @@ def second_question():
         if selected == answers[3]:
             apple_home.add('kuromi')
 
+        return redirect('/question/3')
+    
+@app.route('/question/3', methods = ['GET', 'POST'])
+def third_question():
+    answers = ['a caring character who is always listening', 'the friend who always brings a lot of fun', 'quiet, supportive friend', 'never afraif of speak for your mind']
+
+    if request.method == 'GET':
+        return render_template('question_3.html', answers = answers)
+    
+    if request.method == 'POST':
+        selected = request.form ['selected']
+        if selected == answers[0]:
+            apple_home.add('hellokitty')
+        if selected == answers[1]:
+            apple_home.add('melody')
+        if selected == answers[2]:
+            apple_home.add('hangyodon')
+        if selected == answers[3]:
+            apple_home.add('kuromi')
+            
 if __name__ =='__main__':
     app.run(host='127.0.0.1')

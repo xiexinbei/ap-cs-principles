@@ -25,7 +25,7 @@ class GetCharacter:
         for character, points in self.apple_home.items():
             if points > score:
                 score = points
-                result=character
+                result = character
 
         return result
 

@@ -55,7 +55,7 @@ def second_question():
     
 @app.route('/question/3', methods = ['GET', 'POST'])
 def third_question():
-    answers = ['a caring character who is always listening', 'the friend who always brings a lot of fun', 'quiet, supportive friend', 'never afraif of speak for your mind']
+    answers = ['a caring character who is always listening', 'the friend who always brings a lot of fun', 'quiet, supportive friend', 'never afraid to speak your mind']
 
     if request.method == 'GET':
         return render_template('question_3.html', answers = answers)
@@ -70,6 +70,12 @@ def third_question():
             apple_home.add('hangyodon')
         if selected == answers[3]:
             apple_home.add('kuromi')
-            
+
+        return redirect('/apple_home')
+
+@app.route('/apple_home')
+def get_character():
+    return 'Yes, you are ' + apple_home.sort() + ' in sanrio!'
+
 if __name__ =='__main__':
     app.run(host='127.0.0.1')
